@@ -30,12 +30,12 @@ enum { false, true };
 #endif
 #endif
 /* Size type */
-#ifndef _STDDEF_H_
+#ifndef __SIZE_TYPE__
 typedef u64 size_t;
 #endif
 
 /* Consts */
-#ifndef _STDDEF_H_
+#ifndef NULL
 #define NULL        ((void*)0)            /* A null pointer */
 #endif
 #define C_PI        3.14159265358979      /* Mathematical constant pi */

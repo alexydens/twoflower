@@ -34,9 +34,10 @@ need it installed.
 `C_TiB`.
 - [x] context cracking: os, compiler, architecture.
 ### Other Types:
-- [ ] weekday enum: `weekday_t`, tostring.
-- [ ] month enum: `month_t`, tostring.
-- [ ] ip address enum: `ip_addr_t`, tostring (ipv4, ipv6).
+- [x] tostrings: `cstr_<TYPE>(<TYPE> val)`
+- [x] weekday enum: `weekday_t`, tostring.
+- [x] month enum: `month_t`, tostring.
+- [x] ip address enum: `ip_addr_type_t`, tostring (ipv4, ipv6).
 - [ ] error type enum: `error_t`, tostring (or use errno and strerror?).
 ### Logging:
 - [ ] enabled if `ENABLE_LOGGING` defined.
