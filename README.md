@@ -15,6 +15,10 @@ packages.
 - YK what, I'll include a guide for installing various projects. I'll try to
 make it so that if you aren't using a platform/technology's project, you don't
 need it installed.
+## Define
+- `ENABLE_ASSERT` for assertions.
+- `ENABLE_LOGGING` for logging.
+- `DEBUG` for logging and assertions.
 ## Projects
 ### Base
 - [x] typedefs for unsigned integers: `u8`, `u16`, `u32`, `u64`.
@@ -22,18 +26,20 @@ need it installed.
 - [x] typedefs for floating point values: `f32`, `f64`.
 - [x] typedefs for booleans: `bool` - ifndef.
 - [x] typedef for sizes: `size_t` - ifndef.
-- [ ] utility macros: `MIN(A,B)`, `MAX(A,B)`, `SWAP(A,B)`, `LERP(A,B)`.
-- [ ] assertions: `ASSERT(EXPR)`, `ASSERT_ONFAIL()`.
+- [x] utility macros: `MIN(A,B)`, `MAX(A,B)`, `SWAP(A,B)`, `LERP(A,B,V)`.
+- [x] assertions: `ASSERT(EXPR)`, `ASSERT_ONFAIL(EXPR, LINE, FILE)`, enabled if
+`ENABLE_ASSERT` defined.
 - [ ] to string for each type: `<TYPE>_tostr(size_t maxsize)`.
 - [x] macro consts: `NULL` - ifndef, `C_PI`, `C_E`, `C_KiB`, `C_MiB`, `C_GiB`,
 `C_TiB`.
-- [ ] context cracking: os, compiler, architecture.
+- [x] context cracking: os, compiler, architecture.
 ### Other Types:
 - [ ] weekday enum: `weekday_t`, tostring.
 - [ ] month enum: `month_t`, tostring.
 - [ ] ip address enum: `ip_addr_t`, tostring (ipv4, ipv6).
 - [ ] error type enum: `error_t`, tostring (or use errno and strerror?).
 ### Logging:
+- [ ] enabled if `ENABLE_LOGGING` defined.
 - [ ] log functions: `log_<success, info, warn, error, fatal>()`.
 - [ ] redefine assert_onfail to use log, including filepath, time and stringified
 error.
