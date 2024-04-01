@@ -23,10 +23,10 @@ $(SOURCES): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 # File targets
 # Library
 $(BUILD_DIR)/ltwoflower.a: $(SOURCES)
-	$(AR) -rcs $@ $(BUILD_DIR)/*.o
+	$(AR) -rcs $@ $(BUILD_DIR)/*.o 
 # Test
 $(BUILD_DIR)/test: $(TEST_DIR)/main.c $(BUILD_DIR)/ltwoflower.a
-	$(CC) $(BUILD_DIR)/ltwoflower.a $(TEST_DIR)/*.c $(CFLAGS) $(LDFLAGS) -o $@
+	$(CC) $(TEST_DIR)/*.c $(BUILD_DIR)/ltwoflower.a $(CFLAGS) $(LDFLAGS) -o $@
 
 # Phony targets
 .PHONY: clean test build
