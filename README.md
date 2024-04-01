@@ -63,6 +63,7 @@ error.
 - [ ] append string to file.
 - [ ] print string to stdout.
 - [ ] compare two strings.
+- [ ] c string from string.
 ### 3d Math Library
 - [ ] float vector structs: `vec2_t`, `vec3_t`, `vec4_t`.
 - [ ] integer vector structs: `vec2i_t`, `vec3i_t`, `vec4i_t`.
