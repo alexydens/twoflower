@@ -95,3 +95,5 @@ organized.
 - Emulate a risc-v CPU: rv32i.
 ### 6502 Emulator
 - Emulate a 6502 CPU.
+### C Compiler
+- Eventually, this may be able to compiler itself.

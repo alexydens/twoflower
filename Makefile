@@ -16,6 +16,7 @@ SOURCES = $(BUILD_DIR)/base.o
 SOURCES += $(BUILD_DIR)/types.o
 SOURCES += $(BUILD_DIR)/arena_alloc.o
 SOURCES += $(BUILD_DIR)/str.o
+SOURCES += $(BUILD_DIR)/6502.o
 
 # Pattern rules
 $(SOURCES): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
