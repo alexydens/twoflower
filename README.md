@@ -25,11 +25,10 @@ need it installed.
 - [x] typedefs for signed integers: `i8`, `i16`, `i32`, `i64`.
 - [x] typedefs for floating point values: `f32`, `f64`.
 - [x] typedefs for booleans: `bool` - ifndef.
-- [x] typedef for sizes: `size_t` - ifndef.
 - [x] utility macros: `MIN(A,B)`, `MAX(A,B)`, `SWAP(A,B)`, `LERP(A,B,V)`.
 - [x] assertions: `ASSERT(EXPR)`, `ASSERT_ONFAIL(EXPR, LINE, FILE)`, enabled if
 `ENABLE_ASSERT` defined.
-- [ ] to string for each type: `<TYPE>_tostr(size_t maxsize)`.
+- [ ] to string for each type: `cstr_<TYPE>(char* buff, u64 size, <TYPE> val)`.
 - [x] macro consts: `NULL` - ifndef, `C_PI`, `C_E`, `C_KiB`, `C_MiB`, `C_GiB`,
 `C_TiB`.
 - [x] context cracking: os, compiler, architecture.
@@ -58,7 +57,7 @@ error.
 - [ ] string from part of file.
 - [ ] string from other string (copy).
 - [ ] string from two others strings (concatenate).
-- [ ] string from variable (wrapper for `<TYPE>_tostr(size_t maxsize)`).
+- [ ] string from variable-uses `<TYPE>cstr_(char* buff, u64 size, <TYPE> val)`.
 - [ ] write string to file.
 - [ ] append string to file.
 - [ ] print string to stdout.
