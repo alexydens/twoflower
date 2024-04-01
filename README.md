@@ -28,7 +28,7 @@ need it installed.
 - [x] utility macros: `MIN(A,B)`, `MAX(A,B)`, `SWAP(A,B)`, `LERP(A,B,V)`.
 - [x] assertions: `ASSERT(EXPR)`, `ASSERT_ONFAIL(EXPR, LINE, FILE)`, enabled if
 `ENABLE_ASSERT` defined.
-- [ ] to string for each type: `cstr_<TYPE>(char* buff, u64 size, <TYPE> val)`.
+- [x] to string for each type: `cstr_<TYPE>(char* buff, u64 size, <TYPE> val)`.
 - [x] macro consts: `NULL` - ifndef, `C_PI`, `C_E`, `C_KiB`, `C_MiB`, `C_GiB`,
 `C_TiB`.
 - [x] context cracking: os, compiler, architecture.
