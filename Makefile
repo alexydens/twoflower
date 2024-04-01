@@ -15,6 +15,7 @@ LDFLAGS += -lpthread -lm
 SOURCES = $(BUILD_DIR)/base.o
 SOURCES += $(BUILD_DIR)/types.o
 SOURCES += $(BUILD_DIR)/arena_alloc.o
+SOURCES += $(BUILD_DIR)/str.o
 
 # Pattern rules
 $(SOURCES): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c

@@ -39,10 +39,12 @@ need it installed.
 - [x] ip address enum: `ip_addr_type_t`, tostring (ipv4, ipv6).
 - [ ] error type enum: `error_t`, tostring (or use errno and strerror?).
 ### Logging:
+- [ ] perhaps ought to be in base (to ensure propper assertion behavior in all
+files).
 - [ ] enabled if `ENABLE_LOGGING` defined.
 - [ ] log functions: `log_<success, info, warn, error, fatal>()`.
-- [ ] redefine assert_onfail to use log, including filepath, time and stringified
-error.
+- [ ] redefine `ASSERT_ONFAIL` to use log, including filepath, time and error
+in string form.
 ### Arena Allocator:
 - [x] arena allocator struct: `arena_alloc_t`.
 - [x] create, free and allocate on an arena.
@@ -50,18 +52,18 @@ error.
 - [ ] chunk allocator struct: `chunk_alloc_t`.
 - [ ] create, free and allocate on the chunk allocator.
 ### String Slices
-- [ ] string slice struct: `str_t`.
-- [ ] string from literal.
-- [ ] string from stdin.
-- [ ] string from file.
-- [ ] string from part of file.
-- [ ] string from other string (copy).
-- [ ] string from two others strings (concatenate).
+- [x] string slice struct: `str_t`.
+- [x] string from literal.
+- [x] string from stdin.
+- [x] string from file.
+- [x] string from part of file.
+- [x] string from other string (copy).
+- [x] string from two others strings (concatenate).
 - [ ] string from variable-uses `<TYPE>cstr_(char* buff, u64 size, <TYPE> val)`.
-- [ ] write string to file.
-- [ ] append string to file.
-- [ ] print string to stdout.
-- [ ] compare two strings.
+- [x] write string to file.
+- [x] append string to file.
+- [x] print string to stdout.
+- [x] compare two strings.
 - [ ] c string from string.
 ### 3d Math Library
 - [ ] float vector structs: `vec2_t`, `vec3_t`, `vec4_t`.

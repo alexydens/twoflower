@@ -42,15 +42,19 @@ enum { false, true };
 #define C_TiB       (1024*1024*1024*1024) /* 1 TiB in Bytes */
 
 /* Utility macros */
+/* Make into string */
+#define STRING(A)     #A
+/* Concatenate */
+#define CONCAT(A,B)   A##B
 /* The smallest value out of A or B */
-#define MIN(A,B)    ((A) > (B) ? (A) : (B))
+#define MIN(A,B)      ((A) > (B) ? (A) : (B))
 /* The largest value out of A or B */
-#define MAX(A,B)    ((A) < (B) ? (A) : (B))
+#define MAX(A,B)      ((A) < (B) ? (A) : (B))
 /* A value between A and B, where V is how much inbetween (e.g. 0.5 would be
  * halfway between A and B */
-#define LERP(A,B,V) (MIN(A,B) + V * (MAX(A,B)-MIN(A,B)))
+#define LERP(A,B,V)   (MIN(A,B) + V * (MAX(A,B)-MIN(A,B)))
 /* Swap the values of A and B (A and B must be variables) */
-#define SWAP(A,B)   do{__typeof__(A) TMP = A; A = B; B = TMP;}while(0)
+#define SWAP(A,B)     do{__typeof__(A) TMP = A; A = B; B = TMP;}while(0)
 
 /* Assertions */
 #ifdef DEBUG
@@ -65,7 +69,7 @@ enum { false, true };
 #define ASSERT(EXPR)  do{\
   if (!(EXPR))\
     ASSERT_ONFAIL(EXPR, __LINE__, __FILE__);\
-  }while(0)
+  } while(0)
 #else
 #define ASSERT(EXPR)
 #endif
