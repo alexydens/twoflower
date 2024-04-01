@@ -44,8 +44,8 @@ need it installed.
 - [ ] redefine assert_onfail to use log, including filepath, time and stringified
 error.
 ### Arena Allocator:
-- [ ] arena allocator struct: `arena_alloc_t`.
-- [ ] create, free and allocate on an arena.
+- [x] arena allocator struct: `arena_alloc_t`.
+- [x] create, free and allocate on an arena.
 ### Chunk Allocator:
 - [ ] chunk allocator struct: `chunk_alloc_t`.
 - [ ] create, free and allocate on the chunk allocator.

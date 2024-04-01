@@ -12,7 +12,9 @@ LDFLAGS = -O3 -ffast-math
 LDFLAGS += -lpthread -lm
 
 # Sources
-SOURCES = $(BUILD_DIR)/types.o
+SOURCES = $(BUILD_DIR)/base.o
+SOURCES += $(BUILD_DIR)/types.o
+SOURCES += $(BUILD_DIR)/arena_alloc.o
 
 # Pattern rules
 $(SOURCES): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
