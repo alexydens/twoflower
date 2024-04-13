@@ -2,11 +2,6 @@
 #ifndef TF_ARENA_ALLOC_H
 #define TF_ARENA_ALLOC_H
 
-/* For C++ */
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Base */
 #include "base.h"
 
@@ -24,9 +19,5 @@ extern arena_alloc_t create_arena(void* base, u64 size);
 extern void arena_free(arena_alloc_t* arena);
 /* Allocate size bytes on arena allocator if no space, return NULL */
 extern void* arena_alloc(arena_alloc_t* arena, u64 size);
-
-#ifdef __cplusplus
-} /* extern "C" */
-#endif
 
 #endif /* end of include guard: TF_ARENA_ALLOC_H */

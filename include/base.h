@@ -2,11 +2,6 @@
 #ifndef TF_BASE_H
 #define TF_BASE_H
 
-/* For C++ */
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Unsigned integer types */
 typedef unsigned char       u8;
 typedef unsigned short      u16;
@@ -21,13 +16,9 @@ typedef signed long long    i64;
 typedef float               f32;
 typedef double              f64;
 /* Booleans */
-#ifdef __cplusplus  /* C++ - no _Bool */
-typedef u8 bool;
-#else               /* C - use _Bool */
-#ifndef bool        /* Check no stdbool.h def */
+#ifndef NO_BOOL
 typedef _Bool bool;
 enum { false, true };
-#endif
 #endif
 
 /* Consts */
@@ -39,7 +30,10 @@ enum { false, true };
 #define C_KiB       (1024)                /* 1 KiB in Bytes */
 #define C_MiB       (1024*1024)           /* 1 MiB in Bytes */
 #define C_GiB       (1024*1024*1024)      /* 1 GiB in Bytes */
+/* It seems this is too large, so I'm going to remove it */
+#if 0
 #define C_TiB       (1024*1024*1024*1024) /* 1 TiB in Bytes */
+#endif
 
 /* Utility macros */
 /* Make into string */
@@ -47,9 +41,9 @@ enum { false, true };
 /* Concatenate */
 #define CONCAT(A,B)   A##B
 /* The smallest value out of A or B */
-#define MIN(A,B)      ((A) > (B) ? (A) : (B))
+#define MIN(A,B)      ((A) < (B) ? (A) : (B))
 /* The largest value out of A or B */
-#define MAX(A,B)      ((A) < (B) ? (A) : (B))
+#define MAX(A,B)      ((A) > (B) ? (A) : (B))
 /* A value between A and B, where V is how much inbetween (e.g. 0.5 would be
  * halfway between A and B */
 #define LERP(A,B,V)   (MIN(A,B) + V * (MAX(A,B)-MIN(A,B)))
@@ -140,38 +134,6 @@ enum { false, true };
 /* Make sure a supported architecture is detected */
 #if !CPU_ARM && !CPU_ARM64 && !CPU_RV32 && !CPU_RV64 && !CPU_AMD64
 #error Twoflower: Unsupportec Architecture!
-#endif
-
-/* Type to string conversion functions */
-/* Unsigned ints */
-/* Convert u8 to string, put in buff */
-extern void cstr_u8(char* buff, u64 size, u8 val);
-/* Convert u16 to string, put in buff */
-extern void cstr_u16(char* buff, u64 size, u16 val);
-/* Convert u32 to string, put in buff */
-extern void cstr_u32(char* buff, u64 size, u32 val);
-/* Convert u64 to string, put in buff */
-extern void cstr_u64(char* buff, u64 size, u64 val);
-/* Signed ints */
-/* Convert i8 to string, put in buff */
-extern void cstr_i8(char* buff, u64 size, i8 val);
-/* Convert i16 to string, put in buff */
-extern void cstr_i16(char* buff, u64 size, i16 val);
-/* Convert i32 to string, put in buff */
-extern void cstr_i32(char* buff, u64 size, i32 val);
-/* Convert i64 to string, put in buff */
-extern void cstr_i64(char* buff, u64 size, i64 val);
-/* Floats */
-/* Convert f32 to string, put in buff */
-extern void cstr_f32(char* buff, u64 size, f32 val);
-/* Convert f64 to string, put in buff */
-extern void cstr_f64(char* buff, u64 size, f64 val);
-/* Bools */
-/* Convert bool to string, put in buff */
-extern char* cstr_bool(bool val);
-
-#ifdef __cplusplus
-} /* extern "C" */
 #endif
 
 #endif /* end of include guard: TF_BASE_H */

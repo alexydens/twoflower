@@ -5,11 +5,12 @@ TEST_DIR=test
 BUILD_DIR=build
 
 # Flags for compilation and linking
-CFLAGS = -std=c99 -Wall -Wextra -pedantic
+CFLAGS = -std=c99 -Wall -Wextra -pedantic -Wno-unused-parameter
 CFLAGS += -I./$(INCLUDE_DIR)/
 CFLAGS += -DDEBUG
 LDFLAGS = -O3 -ffast-math
 LDFLAGS += -lpthread -lm
+LDFLAGS += -lwayland-client
 
 # Sources
 SOURCES = $(BUILD_DIR)/base.o

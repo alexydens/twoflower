@@ -28,12 +28,33 @@ need it installed.
 - [x] utility macros: `MIN(A,B)`, `MAX(A,B)`, `SWAP(A,B)`, `LERP(A,B,V)`.
 - [x] assertions: `ASSERT(EXPR)`, `ASSERT_ONFAIL(EXPR, LINE, FILE)`, enabled if
 `ENABLE_ASSERT` defined.
-- [x] to string for each type: `cstr_<TYPE>(char* buff, u64 size, <TYPE> val)`.
 - [x] macro consts: `NULL` - ifndef, `C_PI`, `C_E`, `C_KiB`, `C_MiB`, `C_GiB`,
 `C_TiB`.
 - [x] context cracking: os, compiler, architecture.
+### Platform:
+#### Memory:
+- [ ] allocate memory on the heap: `void* heap_alloc(u64 size)`.
+- [ ] re-size memory on the heap: `void* heap_realloc(void* ptr, u64 size)`.
+- [ ] free memory on the heap: `void heap_free(void* ptr)`.
+- [ ] copy buffer: `void buff_copy(void* src, void* dest, u64 size)`.
+- [ ] set buffer to u8: `void buff_set(void* buff, u64 size, u8 val)`.
+#### Console I/O:
+- [ ] put text to console: `void puts_console(char* str)`.
+- [ ] put buffer to console: `void putn_console(char* buff, u64 size)`.
+- [ ] read buffer from console: `void getn_console(char* buff, u64 size)`.
+#### File I/O:
+- [ ] put text to file: `void puts_file(char* str, char* path)`.
+- [ ] put buffer to file: `void putn_file(char* buff, u64 size, char* path)`.
+- [ ] read buffer from file: `void getn_file(char* buff, u64 size, char* path)`.
+#### Misc:
+- [ ] get time: `time_t get_time(void)`.
+- [ ] get date: `date_t get_date(void)`.
+#### To Strings:
+- [ ] tostrings: `cstr_<TYPE>(<TYPE> val)`.
+- [ ] tostrings: `cstr_<TYPE>(char* buff, u64 size, <TYPE> val)`.
 ### Other Types:
-- [x] tostrings: `cstr_<TYPE>(<TYPE> val)`
+- [x] time struct: `time_t`.
+- [x] date struct: `date_t`.
 - [x] weekday enum: `weekday_t`, tostring.
 - [x] month enum: `month_t`, tostring.
 - [x] ip address enum: `ip_addr_type_t`, tostring (ipv4, ipv6).
@@ -46,24 +67,23 @@ files).
 - [ ] redefine `ASSERT_ONFAIL` to use log, including filepath, time and error
 in string form.
 ### Arena Allocator:
-- [x] arena allocator struct: `arena_alloc_t`.
-- [x] create, free and allocate on an arena.
+- [ ] arena allocator struct: `arena_alloc_t`.
+- [ ] create, free and allocate on an arena.
 ### Chunk Allocator:
 - [ ] chunk allocator struct: `chunk_alloc_t`.
 - [ ] create, free and allocate on the chunk allocator.
 ### String Slices
-- [x] string slice struct: `str_t`.
-- [x] string from literal.
-- [x] string from stdin.
-- [x] string from file.
-- [x] string from part of file.
-- [x] string from other string (copy).
-- [x] string from two others strings (concatenate).
-- [ ] string from variable-uses `<TYPE>cstr_(char* buff, u64 size, <TYPE> val)`.
-- [x] write string to file.
-- [x] append string to file.
-- [x] print string to stdout.
-- [x] compare two strings.
+- [ ] string slice struct: `str_t`.
+- [ ] string from literal.
+- [ ] string from stdin.
+- [ ] string from file.
+- [ ] string from part of file.
+- [ ] string from other string (copy).
+- [ ] string from two others strings (concatenate).
+- [ ] write string to file.
+- [ ] append string to file.
+- [ ] print string to stdout.
+- [ ] compare two strings.
 - [ ] c string from string.
 ### 3d Math Library
 - [ ] float vector structs: `vec2_t`, `vec3_t`, `vec4_t`.

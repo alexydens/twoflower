@@ -2,11 +2,6 @@
 #ifndef TF_STR_H
 #define TF_STR_H
 
-/* For C++ */
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Base */
 #include "base.h"
 #include "arena_alloc.h"
@@ -44,8 +39,7 @@ extern void print_string(const str_t string);
 /* Compare two strings bool is equal */
 extern bool string_compare(const str_t str1, const str_t str2);
 
-#ifdef __cplusplus
-} /* extern "C" */
-#endif
+/* C string from string */
+const char* cstr_string(arena_alloc_t* arena, const str_t string);
 
 #endif /* end of include guard: TF_STR_H */

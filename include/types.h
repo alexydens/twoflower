@@ -2,11 +2,6 @@
 #ifndef TF_TYPES_H
 #define TF_TYPES_H
 
-/* For C++ */
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Base */
 #include "base.h"
 
@@ -40,17 +35,18 @@ typedef enum {
   IPv4 = 4,
   IPv6 = 6,
 } ip_addr_type_t;
-
-/* String from each type */
-/* C string from weekday */
-extern const char* cstr_weekday(weekday_t day);
-/* C string from month */
-extern const char* cstr_month(month_t month);
-/* C string from ip address type */
-extern const char* cstr_ipaddrtype(ip_addr_type_t type);
-
-#ifdef __cplusplus
-} /* extern "C" */
-#endif
+/* Time of day struct */
+typedef struct {
+  u8 hour;
+  u8 minutes;
+  u8 seconds;
+} time_t;
+/* Date struct */
+typedef struct {
+  month_t month;
+  weekday_t weekday;
+  u8 day;
+  u16 year;
+} date_t;
 
 #endif /* end of include guard: TF_TYPES_H */
